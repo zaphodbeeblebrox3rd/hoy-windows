@@ -4,11 +4,11 @@ modify, and share this however you want but you must publish the source code of 
 
 ## RDSH_Monitor_Memory_Utilization
 Windows has excellent "Fair Share" enforcement of CPU, network, and disk I/O resources but NOTHING buit in for memory usage.
-There are third party solutions, but nothing that meets my needs.
+There are third party solutions, but nothing on the market has met my specific needs.
 
 I created this script initially to prepare an RDS environment to move beyond lightweight applications and to accommodate 
-resource-intensive computational jobs in R, Python, and Matlab.  Without any preventive measures, a single user can take
-all physical memory on an RD Session Host, causing excessive paging and making the machine unusable for other users.
+resource-intensive computational jobs.  Without any preventive measures, a single user can takeall physical memory on an 
+RD Session Host, causing excessive paging and making the machine unresponsive to other users.
 
 I created this simple, short script to warn RDS users when their memory utilization exceeds an alert threshold.
 There is also a quota threshold.  When exceeded, a user's session will be logged off and another email alert will be sent.
