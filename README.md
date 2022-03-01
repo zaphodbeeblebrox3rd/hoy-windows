@@ -24,4 +24,8 @@ This will most likely be best utilized as a Scheduled Task.
 
 ### Usage
 - If you are enforcing a PowerShell Execution Policy of AllSigned you will need to edit the variables and then code-sign the script.
-- There are no command-line options.  Just edit the vars at the top of the script.
+- The script does not accept args.  You will need to edit the vars at the top of the script.
+- If you run into issues with the Execution Policy or running as a Scheduled Task, run with these options:
+```
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NonInteractive -NoProfile -ExecutionPolicy bypass -file "<path_to_the script>\RDSH_Monitor_memory_utilization.ps1"
+```
