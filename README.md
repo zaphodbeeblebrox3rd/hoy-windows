@@ -2,6 +2,9 @@
 Windows (mostly PowerShell) scripts for sharing publicly.  This is under GPL licensing, which basically means you are free to use, 
 modify, and share but you must publish the source code of any derivative work.
 
+## Me
+My name is Eric Hoy, and I have been using PowerShell for years in in various roles such as Systems administrator, IT Manager, Consultant, and IT Director.  As an IT Professional, my jobs depend on having good tools.  I am using this repo to highlight some powerful tools and how they can be used to make life easier.
+
 ## Remote Desktop Services Administration
 Scripts related to automation and management of Windows RDS will be organized into this directory.
 
