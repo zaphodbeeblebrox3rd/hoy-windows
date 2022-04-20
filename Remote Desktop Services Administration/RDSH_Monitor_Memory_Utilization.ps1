@@ -1,6 +1,6 @@
 ﻿#Connect to all Windows RDS Servers and Monitor Memory Utilization
 #Enforce a user-based memory quota
-#Author: Eric Hoy, University of Chicago, SSCS
+#Author: Eric Hoy
 #Date: 2022-02-23
 #Modified: 2022-02-28
 
