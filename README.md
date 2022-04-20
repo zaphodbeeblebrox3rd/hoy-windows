@@ -18,7 +18,7 @@ Management of Windows Servers, including troubleshooting, performance, and softw
 ### Special Thanks
 I'm a sysadmin sharing some code samples for other sysadmins.  These are mainly examples of how I interact with modules for which I cannot claim credit.
 
-The real work making this possible this is the excellent PowerShell modules published by the developers and organizations listed below.  Please give these developers your support:
+The real work which makes all of this possible is the excellent PowerShell modules published by the developers and organizations listed below.  Please give these developers your support:
 - PSWindowsUpdate by [MichalGajda](https://www.powershellgallery.com/profiles/MichalGajda) and I believe credit may also be due to [David Johnson](https://github.com/dwj7738)
 - PowershellGet by [PowerShellTeam](https://www.powershellgallery.com/profiles/PowerShellTeam)
 - PackageManagement by [PowerShellTeam](https://www.powershellgallery.com/profiles/PowerShellTeam)
