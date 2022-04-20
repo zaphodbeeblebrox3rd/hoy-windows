@@ -3,7 +3,7 @@ Windows (mostly PowerShell) scripts for sharing publicly.  This is under GPL lic
 modify, and share but you must publish the source code of any derivative work.
 
 ## Me
-My name is Eric Hoy, and I have been using PowerShell for years in in various roles such as Systems administrator, IT Manager, Consultant, and IT Director.  As an IT Professional, my jobs depend on having good tools.  
+My name is Eric Hoy, and I have been using PowerShell for years in in various roles such as Systems administrator, IT Manager, Consultant, and IT Director.  As an IT Professional, my success depends on having good tools and knowing how to use them.  
 
 I am using this repo to highlight some powerful tools and how they can be used to make life easier.  If you need to contact me for anything that doesn't fit well into the built-in "Issues" feature you can email me at gitme@hoymanor.com.  
 
