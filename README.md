@@ -4,3 +4,6 @@ modify, and share this however you want but you must publish the source code of 
 
 ## Remote Desktop Services Administration
 Scripts related to automation and management of Windows RDS will be organized into this directory.
+
+## Server Administration
+Management of Windows Servers, including troubleshooting, performance, and software installation.
