@@ -1,31 +1,15 @@
-# hoy-windows
-Windows (mostly PowerShell) scripts for sharing publicly.  This is under GPL licensing, which basically means you are free to use, 
-modify, and share this however you want but you must publish the source code of any derivative work.
+# PowerShell Miscellaneous Scripts
 
-## RDSH_Monitor_Memory_Utilization
-Windows has excellent "Fair Share" enforcement of CPU, network, and disk I/O resources but NOTHING buit in for memory usage.
-There are third party solutions, but nothing on the market has met my specific needs.
+## This is where most of the PowerShell scripts reside, unless they fit neatly into another category.
 
-I created this script initially to prepare an RDS environment to move beyond lightweight applications and to accommodate 
-resource-intensive computational jobs.  Without any preventive measures, a single user can takeall physical memory on an 
-RD Session Host, causing excessive paging and making the machine unresponsive to other users.
+### XML vars file
+Moving forward, I will mostly be writing scripts to make use of an external files for variables.  This removes the need to constantly code-sign scripts every time I need to make the slightest change in the environment, like adding a VM or adjusting parameters.
 
-I created this simple, short script to warn RDS users when their memory utilization exceeds an alert threshold.
-There is also a quota threshold.  When exceeded, a user's session will be logged off and another email alert will be sent.
+Check [sample.xml](https://github.com/uchicago-ssd-sscs/windows/blob/main/sample.xml) for a template for putting your vars into xml format.
 
-This will most likely be best utilized as a Scheduled Task.
+### RDSH_Monitor_Memory_Utilization
+This is the first script to adopt the usage of an external file for vars.  See the XML vars file section above.  This script can be run as a scheduled task from a single "management" server that has WinRM access to all the machines in your RDS environment.  
 
-### Requirements
-- Windows RDS Deployment.  Tested on Windows 2019.
-- Active Directory
-- Administrator access to all servers in the RDS deployment
-- One management server or computer with WinRM access to all servers in the RDS deployment
-- An open SMTP relay inside your network
+I created this script to prepare for a wave of new users and the addition of a memory-intensive computational application to my RDSH servers.  There is a lower threshold which will generate an email warning, followed by an upper threshold where that user's processes are terminated (including their RDP session) and an additional email notification.
 
-### Usage
-- If you are enforcing a PowerShell Execution Policy of AllSigned you will need to edit the variables and then code-sign the script.
-- The script does not accept args.  You will need to edit the vars at the top of the script.
-- If you run into issues with the Execution Policy or running as a Scheduled Task, run PowerShell with these options:
-```
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NonInteractive -NoProfile -ExecutionPolicy bypass -file "<path_to_the script>\RDSH_Monitor_memory_utilization.ps1"
-```
+You will need to edit the path and filename of your xml vars file before you run it.  If code-signing is required in your environment, you will then have to re-sign the script.
