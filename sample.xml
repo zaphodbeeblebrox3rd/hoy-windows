@@ -1,71 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <sscs>
-    <rdsh_mem_quota>
+	<rdsh_mem_quota>
 		<host>
-			<name>test-rdsh-0</name>
+			<name>rdsh-0</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-1</name>
+			<name>rdsh-1</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-2</name>
+			<name>rdsh-2</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-3</name>
+			<name>rdsh-3</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-4</name>
+			<name>rdsh-4</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-5</name>
+			<name>rdsh-5</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-6</name>
+			<name>rdsh-6</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-7</name>
+			<name>rdsh-7</name>
 			<alert_quota>55</alert_quota>
 			<mem_quota>60</mem_quota>
 		</host>
 		<host>
-			<name>test-rdsh-8</name>
+			<name>rdsh-8</name>
 			<alert_quota>20</alert_quota>
 			<mem_quota>24</mem_quota>
 		</host>
-    </rdsh_mem_quota>
+	</rdsh_mem_quota>
 	<rds_environment>
-		<name>testLAB</name>
-		<computer_domain>myorganization.com</computer_domain>
+		<name>LAB</name>
+		<computer_domain>domain.com</computer_domain>
 		<user_domain>ADLOCAL</user_domain>
-		<admin_email>me@myorganization.com</admin_email>
-		<helpdesk_email>serverteam@myorganization.com</helpdesk_email>
-		<support_team_name>My Organization Computing Services</support_team_name>
-		<help_resources>https://myorganization.com/category/faq/computing</help_resources>
-		<smtp_relay>smtp.myorganization.com</smtp_relay>
+		<admin_email>my_email@domain.com</admin_email>
+		<helpdesk_email>my_team_email@domain.com</helpdesk_email>
+		<support_team_name>My Team</support_team_name>
+		<help_resources>https://help.domain.com</help_resources>
+		<smtp_relay>smtp.domain.com</smtp_relay>
 		<rdcb>
-			<name>test-rdcb-0</name>
-			<fqdn>test-rdcb-0.ad.uchicago.edu</fqdn>
+			<name>rdcb-0</name>
+			<fqdn>rdcb-0.domain.com</fqdn>
 		</rdcb>
 		<rdgw>>
-			<name>test-rdgw-0</name>
+			<name>rdgw-0</name>
 		</rdgw>
 		<rdsl>
-			<name>test-rdsl-0</name>
+			<name>rdsl-0</name>
 		</rdsl>
 	</rds_environment>
+	<software_to_remove>
+		<package_name>onedrive</package_name>
+	</software_to_remove>
+	<aws_systems_manager>
+		<all_hosts>
+			<name>rdsh-1</name>
+			<name>rdsh-2</name>
+			<name>rdsh-3</name>
+			<name>rdsh-4</name>
+			<name>rdsh-5</name>
+			<name>rdsh-6</name>
+			<name>rdsh-7</name>
+			<name>rdsh-8</name>
+			<name>rdsh-0</name>
+			<name>rdcb-0</name>
+			<name>rdgw-0</name>
+			<name>rdsl-0</name>
+			<name>sscs-em2019</name>
+		</all_hosts>
+		<code>Insert AWS Systems Manager Enrollment Code Here</code>
+		<id>Insert AWS Systems Manager Enrollment ID Here</id>
+		<region>us-east-1</region>
+	</aws_systems_manager>
+	<virtual_servers>
+		<name>rdsh-1</name>
+		<name>rdsh-2</name>
+		<name>rdsh-3</name>
+		<name>rdsh-4</name>
+		<name>rdsh-5</name>
+		<name>rdsh-6</name>
+		<name>rdsh-7</name>
+		<name>rdsh-8</name>
+		<name>rdsh-0</name>
+		<name>rdcb-0</name>
+		<name>rdgw-0</name>
+		<name>rdsl-0</name>
+		<name>em2019</name>
+		<name>fm</name>
+		<name>dos-fm-test</name>
+		<name>fm</name>
+		<requisite_files>
+			<source_path>\\domain.com\myteam\Windows\Applications\Sysinternals</source_path>
+			<destination_path>C$\InstallationFiles\</destination_path>
+		</requisite_files>
+		<requisite_directories>
+			<path>C:\logs</path>
+			<path>C:\sessionlogs</path>
+		</requisite_directories>
+		<update_log_path>\\domain.com\myteam\Windows\Baseline Reports\WindowsUpdates</update_log_path>
+		<log_path>C:\logs</log_path>
+		<log_path_rdsh_local>C:\SessionLogs</log_path_rdsh_local>
+		<log_path_rdsh_remote>\\domain.com\myteam\windows\RDS\Logs\RD Session Logs\</log_path_rdsh_remote>
+		<log_path_rdsh_smb>C$\sessionlogs\*</log_path_rdsh_smb>
+		<log_entries_per_vm>50</log_entries_per_vm>
+		<default_snapshot_description>Fresh Snapshots for Domain Connectivity</default_snapshot_description>
+	</virtual_servers>
+	<esxi_hosts>
+		<name>10.1.1.2</name>
+		<name>10.1.1.3</name>
+		<name>10.1.1.96</name>
+		<name>10.1.1.97</name>
+		<name>10.1.1.98</name>
+		<name>10.1.1.99</name>
+		<name>10.1.1.100</name>
+		<name>10.1.1.101</name>
+	</esxi_hosts>
+	<vcenter>
+		<username>hoy</username>
+		<primary_name>10.1.1.4</primary_name>
+		<secondary_name>10.2.3.4</secondary_name>
+		<tertiary_name>10.3.3.4</tertiary_name>
+	</vcenter>
+	<powershell>
+		<script_to_sign_dirs>
+			<path>\\domain.com\myteam\Scripts\windows\PowerShell ADScripts</path>
+			<path>\\domain.com\myteam\Scripts\windows\PowerShell File System</path>
+			<path>\\domain.com\myteam\Scripts\windows\PowerShell_Other</path>
+			<path>\\domain.com\myteam\Scripts\windows\PowerShell_VMware</path>
+		</script_to_sign_dirs>
+	</powershell>
 </sscs>
