@@ -5,7 +5,7 @@
 
 
 #Make sure to set this one, or comment it out if you are not going to use an xml data file
-$variables_file = "\\harbor.uchicago.edu\sscs-server\Scripts\variables\sscs.xml"
+$variables_file = "\\server.domain.com\myteam\Scripts\variables\sample.xml"
 
 #These are fine to leave at the default values
 $line_separator="**************************************************************************************"
@@ -21,11 +21,11 @@ $vcenter_user='username'
 
 #import vars from xml file if it exists
 if (Test-Path -Path $variables_file) {
-   [xml]$sscs = Get-Content $variables_file
-   $all_computers = $sscs.sscs.virtual_servers.name
-   $requisite_files = $sscs.sscs.virtual_servers.requisite_files
-   $requisite_directories = $null #$sscs.sscs.virtual_servers.requisite_directories
-   $log_path = $sscs.sscs.virtual_servers.log_path
+   [xml]$sample = Get-Content $variables_file
+   $all_computers = $sample.sscs.virtual_servers.name
+   $requisite_files = $sample.sscs.virtual_servers.requisite_files
+   $requisite_directories = $null #$sample.sscs.virtual_servers.requisite_directories
+   $log_path = $sample.sscs.virtual_servers.log_path
    }
 
 #You must have this module, minimum version 12.1.0.16009493, on this computer to proceed. 
